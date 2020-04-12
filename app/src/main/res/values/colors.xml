@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004D40</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#F44336</color>
+
+    <color name="color1_splash">#4CAF50</color>
+    <color name="color2_splash">#DFB113</color>
+    <color name="color3_splash">#F44336</color>
+    <color name="itemSelected">#e57373</color>
+    <color name="colorBlanco">#ffffff</color>
+    <color name="colorNegro">#252525</color>
+    <color name="negroTransparente">#b4000000</color>
+    <color name="colorNegro_oscuro">#000000</color>
+    <color name="colorGris">#81888b</color>
+    <color name="colorHint">#646464</color>
+    <color name="colorVerdeTransparente">#642e7d32</color>
+    <color name="transparente">@android:color/transparent</color>
+
+    <color name="qr_code_white">#FFFFFFFF</color>
+    <color name="qr_code_flashlight_bg">#66000000</color>
+    <color name="qr_code_finder_mask">#80000000</color>
+    <color name="qr_code_flash_light_text_color">#66FFFFFF</color>
+    <color name="qr_code_finder_frame">#FFFFFFFF</color>
+    <color name="qr_code_finder_laser">#25f705</color>
+
+</resources>

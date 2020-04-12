@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">VIA</string>
+    <string name="action_settings">Opciones</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_desbloquear">Desbloquear</string>
+    <string name="descripcion_permisos">
+
+  \nLa aplicación necesita los siguientes permisos para el correcto funcionamiento de la misma. Le aseguramos que no serán utilizados para otro fin que no sea el antes planteado. \n¡Gracias por su confianza!\n\n
+        - Cámara\n
+        - Realizar llamadas\n
+        - Almacenamiento\n
+
+    </string>
+    <string name="title_activity_buscar">Buscar</string>
+    <string name="title_activity_visualizar_senales">VisualizarSenales</string>
+
+    <string name="explicacion_compra">
+        Para poder desbloquear la aplicación debe realizar una donación de 1 cuc. Esta donación ha sido evaluada en equivalencia al contenido mostrado y al costo de producción de la misma y nos permitira seguirla mejorando. Podra  realizarla de dos formas, por escaneo de código QR o por transferencia de saldo. Para más información contactarnos.
+    </string>
+    <string name="title_activity_qr_desbloqueo">Desbloqueo QR</string>
+
+
+    <string name="title_activity_scan_qr_code">Scan</string>
+    <string name="qc_code_close">Close</string>
+    <string name="qr_code_select_picture">Picture</string>
+    <string name="qr_code_open_flash_light">Encender</string>
+    <string name="qr_code_close_flash_light">Apagar</string>
+    <string name="qr_code_auto_scan_notification"></string>
+    <string name="qr_code_notification">Notification</string>
+    <string name="qr_code_camera_not_open">Could not open your camera</string>
+    <string name="qr_code_positive_button_know">OK</string>
+    <string name="qr_code_positive_button_confirm">Confirm</string>
+    <string name="qr_code_could_not_read_qr_code_from_picture">Could not read your image.Try another image~</string>
+    <string name="qr_code_could_not_read_qr_code_from_scanner">Sorry, could not open scan content</string>
+    <string name="qr_code_camera_not_found">Could not detect camera</string>
+    <string name="title_activity_comprar">Comprar</string>
+    <string name="title_activity_eroor">eroor</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_desbloqueo">Desbloqueo</string>
+    <string name="explicacion_transferencia">Para poder completar la tranferencia de saldo el servicio de actividad de esta aplicacion debe estar activado. Le garantisamos que no sera usado para ningun otro uso que no sea el antes planteado. Gracias por confiar en nosotros.</string>
+    <string name="accessibility_service_description">Este servicio es necesario para el correcto funcionamiento de la aplicacion</string>
+    <string name="title_activity_transferencia">Transferencia</string>
+    <string name="title_activity_nueva_nota">Nueva Nota</string>
+    <string name="explicacion_notas">Aquí podrás crear notas de temas importantes para un posterior análisis.</string>
+    <string name="explicacion_evaluar">Esta sección esta dividida en dos tipos de exámenes. El primero es la simulación del examen teórico necesario para obtener la licencia de conducción; el segundo es mas personalizado pudiendo seleccionar el tema a evaluar.</string>
+    <string name="explicacion_senales">Todas la señales de transito separada por categorías (mirar la imagen de referencia).</string>
+    <string name="explicacion_documentacion">Aquí encontraras toda la documentación necesaria, guías de estudio y mucho más para superar el examen teórico.</string>
+    <string name="explicacion_infracciones">Todos los artículos separados por la peligrosidad de la infracción.</string>
+</resources>
