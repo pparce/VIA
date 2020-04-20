@@ -13,6 +13,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -67,7 +68,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         isPrimeraVez();
 
         if (android.os.Build.VERSION.SDK_INT >= 23) {
@@ -97,10 +98,10 @@ public class Splash extends AppCompatActivity {
                     Calendar calendario = Calendar.getInstance();
                     int ano = calendario.get(Calendar.YEAR);
                     int mes = calendario.get(Calendar.MONTH) + 1;
-                    int dia = (calendario.get(Calendar.DAY_OF_MONTH))+ 1;
+                    int dia = (calendario.get(Calendar.DAY_OF_MONTH)) + 1;
                     int hora = calendario.get(Calendar.HOUR_OF_DAY);
                     String aux = "";
-                    if (String.valueOf(hora).length() == 1){
+                    if (String.valueOf(hora).length() == 1) {
                         aux = "0" + hora;
                     } else {
                         aux = "" + hora;
@@ -163,10 +164,10 @@ public class Splash extends AppCompatActivity {
         }
     }
 
-    public Boolean validarCompra(SharedPreferences preferences){
+    public Boolean validarCompra(SharedPreferences preferences) {
         String clave = encriptarImei(encriptarImei(getImei() + "via") + "comprado");
 
-        if (preferences.getString("via","12345678").equals(clave)) {
+        if (preferences.getString("via", "12345678").equals(clave)) {
             Aplicacion.COMPRADO = true;
             return true;
         } else {
@@ -331,7 +332,7 @@ public class Splash extends AppCompatActivity {
 
     }
 
-    private boolean isPrimeraVez(){
+    private boolean isPrimeraVez() {
 
         SharedPreferences preferences = getSharedPreferences("configuracion", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -340,18 +341,18 @@ public class Splash extends AppCompatActivity {
             Calendar calendario = Calendar.getInstance();
             int ano = calendario.get(Calendar.YEAR);
             int mes = calendario.get(Calendar.MONTH) + 1;
-            int dia = (calendario.get(Calendar.DAY_OF_MONTH))+ 1;
+            int dia = (calendario.get(Calendar.DAY_OF_MONTH)) + 1;
             int hora = calendario.get(Calendar.HOUR_OF_DAY);
             int segundo = calendario.get(Calendar.SECOND);
             String aux = "";
             String aux1 = "";
-            if (String.valueOf(hora).length() == 1){
+            if (String.valueOf(hora).length() == 1) {
                 aux = "0" + hora;
             } else {
                 aux = "" + hora;
             }
 
-            if (String.valueOf(segundo).length() == 1){
+            if (String.valueOf(segundo).length() == 1) {
                 aux1 = "0" + hora;
             } else {
                 aux1 = "" + hora;

@@ -92,6 +92,7 @@ public class ResideMenu extends FrameLayout {
         initViews(context, -1, -1);
     }
 
+
     /**
      * This constructor provides you to create menus with your own custom
      * layouts, but if you use custom menu then do not call addMenuItem because
@@ -147,7 +148,7 @@ public class ResideMenu extends FrameLayout {
         return scrollViewRightMenu;
     }
 
-    @Override
+    /*@Override
     protected boolean fitSystemWindows(Rect insets) {
         // Applies the content insets to the view's padding, consuming that
         // content (modifying the insets to be 0),
@@ -169,7 +170,7 @@ public class ResideMenu extends FrameLayout {
                 bottomPadding);
         insets.left = insets.top = insets.right = insets.bottom = 0;
         return true;
-    }
+    }*/
 
     private int getNavigationBarHeight() {
         Resources resources = getResources();

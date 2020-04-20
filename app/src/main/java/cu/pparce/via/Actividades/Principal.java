@@ -80,6 +80,8 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         Inicializar();
         setUpMenu();
 
@@ -201,7 +203,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
 
         if (validarCompra(getSharedPreferences("app", Context.MODE_PRIVATE)) && fragmento == 0) {
-            MenuItem menuItem =  menu.findItem(R.id.action_desbloquear);
+            MenuItem menuItem = menu.findItem(R.id.action_desbloquear);
             menuItem.setVisible(false);
 
         }
@@ -209,10 +211,10 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         return super.onPrepareOptionsMenu(menu);
     }
 
-    public Boolean validarCompra(SharedPreferences preferences){
+    public Boolean validarCompra(SharedPreferences preferences) {
         String clave = encriptarImei(encriptarImei(getImei() + "via") + "comprado");
 
-        if (preferences.getString("via","12345678").equals(clave)) {
+        if (preferences.getString("via", "12345678").equals(clave)) {
             Aplicacion.COMPRADO = true;
             return true;
         } else {
@@ -275,7 +277,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             finish();
         } else if (id == R.id.action_info) {
 
-            switch (fragmento){
+            switch (fragmento) {
                 case 1:
                     showInfo(getString(R.string.explicacion_documentacion));
                     break;
@@ -308,7 +310,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    private void showInfo(String texto){
+    private void showInfo(String texto) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(Principal.this);
         final View myview = layoutInflater.inflate(R.layout.dialog_custom_layout, null);
@@ -436,7 +438,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         int hora = calendario.get(Calendar.HOUR_OF_DAY);
 
         String aux = "";
-        if (String.valueOf(hora).length() == 1){
+        if (String.valueOf(hora).length() == 1) {
             aux = "0" + hora;
         } else {
             aux = "" + hora;
@@ -508,9 +510,9 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             cambiarFragmento(3, view);
         } else if (view == acercade && seleccionado != view) {
             cambiarFragmento(4, view);
-        } else if (view == infracciones && seleccionado != view){
+        } else if (view == infracciones && seleccionado != view) {
             cambiarFragmento(5, view);
-        } else if (view == notas && seleccionado != view){
+        } else if (view == notas && seleccionado != view) {
             cambiarFragmento(6, view);
         }
         resideMenu.closeMenu();
@@ -556,7 +558,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         }*/
     }
 
-    private void hideSoftKey(Activity activity){
+    private void hideSoftKey(Activity activity) {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         View view = activity.getCurrentFocus();
         if (view == null)
