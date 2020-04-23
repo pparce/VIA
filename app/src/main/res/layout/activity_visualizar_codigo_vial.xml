@@ -5,25 +5,21 @@
     android:id="@+id/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlanco"
+    android:background="@color/colorPrimary"
     android:fitsSystemWindows="false">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/fondo_principal_redondeado"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/transparente"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:theme="@style/AppTheme.AppBarOverlay"
-            app:titleTextColor="@color/colorNegro" />
+            app:theme="@style/AppTheme.AppBarOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

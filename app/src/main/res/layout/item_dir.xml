@@ -22,7 +22,7 @@
         android:drawableLeft="@drawable/ic_libro"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
-        android:textColor="@color/colorNegro"
+        android:textColor="@color/colorAccent"
         tools:text="@string/app_name"
         android:textSize="15sp" />
 </LinearLayout>

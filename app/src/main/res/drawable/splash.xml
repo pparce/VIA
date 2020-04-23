@@ -2,7 +2,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@drawable/fondo_menu" />
-
     <item>
         <bitmap android:src="@drawable/logo" android:gravity="center"/>
     </item>

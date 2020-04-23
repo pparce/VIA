@@ -3,19 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
-    tools:context=".Actividades.VisualizarPdf">
+    android:background="@color/colorPrimary">
 
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <cu.pparce.via.Utiles.PdfViewerView
+        <cu.uno.via.utiles.PdfViewerView
             android:background="@color/colorBlanco"
             android:id="@+id/pdfViewr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></cu.pparce.via.Utiles.PdfViewerView>
+            android:layout_height="match_parent"></cu.uno.via.utiles.PdfViewerView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLibros"

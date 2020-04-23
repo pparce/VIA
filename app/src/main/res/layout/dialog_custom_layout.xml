@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content">
 
 
-                    <cu.pparce.via.Utiles.JustifyTextView
+                    <cu.uno.via.utiles.JustifyTextView
                         android:id="@+id/descripcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

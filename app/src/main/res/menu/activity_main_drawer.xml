@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_infraccion"
+            android:icon="@drawable/ic_infraccion"
+            android:title="@string/menu_infraccion" />
+        <item
+            android:id="@+id/nav_documentacion"
+            android:icon="@drawable/ic_documentos"
+            android:title="@string/menu_documentos" />
+        <item
+            android:id="@+id/nav_senales"
+            android:icon="@drawable/ic_senales"
+            android:title="@string/menu_senales" />
+        <item
+            android:id="@+id/nav_evaluar"
+            android:icon="@drawable/ic_evaluar"
+            android:title="@string/menu_evaluar" />
+        <item
+            android:id="@+id/nav_notas"
+            android:icon="@drawable/ic_notas"
+            android:title="@string/menu_notas" />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="@string/menu_info" />
+    </group>
+</menu>

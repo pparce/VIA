@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="cu.uno.via.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_infraccion"
+        android:name="cu.uno.via.ui.infraccion.InfraccionFragment"
+        android:label="@string/menu_infraccion"
+        tools:layout="@layout/fragment_infraccion" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_documentacion"
+        android:name="cu.uno.via.ui.documentos.DocumentosFragment"
+        android:label="@string/menu_documentos"
+        tools:layout="@layout/fragment_documentos" />
+
+    <fragment
+        android:id="@+id/nav_senales"
+        android:name="cu.uno.via.ui.senales.SenalesFragment"
+        android:label="@string/menu_senales"
+        tools:layout="@layout/fragment_senales" />
+
+    <fragment
+        android:id="@+id/nav_evaluar"
+        android:name="cu.uno.via.ui.evaluar.EvaluarFragment"
+        android:label="@string/menu_evaluar"
+        tools:layout="@layout/fragment_evaluar" />
+
+    <fragment
+        android:id="@+id/nav_notas"
+        android:name="cu.uno.via.ui.notas.NotasFragment"
+        android:label="@string/menu_notas"
+        tools:layout="@layout/fragment_notas" />
+
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="cu.uno.via.ui.info.InfoFragment"
+        android:label="@string/menu_info"
+        tools:layout="@layout/fragment_info" />
+</navigation>
