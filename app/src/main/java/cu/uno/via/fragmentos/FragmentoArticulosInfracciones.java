@@ -12,10 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +29,9 @@ import cu.uno.via.ui.infraccion.InfraccionFragment;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscar;
-import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
 
 public class FragmentoArticulosInfracciones extends Fragment implements CallbackFragmentBuscar {
-
 
 
     Context context;
@@ -52,7 +52,6 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_buscar_articulos, container, false);
 
-
         Inicializar();
 
         return view;
@@ -66,7 +65,7 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
     }
 
     @SuppressLint("WrongConstant")
-    private void Inicializar(){
+    private void Inicializar() {
 
         posicion = getArguments().getInt("posicion");
 
@@ -75,40 +74,28 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
         listaArticulos = new ArrayList<>();
         listaArticulos = App.LISTA_INFRACCION.get(posicion).getListaArticulos();
 
-
-        noHay = (LinearLayout) view.findViewById(R.id.noHay);
-
-
-        rvLibros = (RecyclerView) view.findViewById(R.id.rvArticulos);
+        noHay = view.findViewById(R.id.noHay);
+        rvLibros = view.findViewById(R.id.rvArticulos);
         layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        adapter = new ArticulosInfraccionAdapter(context , App.LISTA_INFRACCION.get(posicion).getListaArticulos());
-        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(20,5);
-        rvLibros.addItemDecoration(itemDecorationEventos);
+        adapter = new ArticulosInfraccionAdapter(context, App.LISTA_INFRACCION.get(posicion).getListaArticulos());
         rvLibros.setLayoutManager(layoutManager);
         rvLibros.setAdapter(adapter);
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String nombre = "";
                 int posicion = rvLibros.getChildAdapterPosition(view);
                 List<ModeloArticulo> lista = adapter.getLista();
-
                 nombre = "Artículo " + lista.get(posicion).getNombre();
-
-
-
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-                final View myview = layoutInflater.inflate(R.layout.dialog_custom_layout, null);
-                ImageView imageView = (ImageView) myview.findViewById(R.id.imageView);
-                TextView descripcion = (TextView) myview.findViewById(R.id.descripcion);
+                final View myview = layoutInflater.inflate(R.layout.dialog_layout_articulo, null);
+                TextView descripcion = myview.findViewById(R.id.descripcion);
 
                 String content = lista.get(posicion).getDescripcion();
                 descripcion.setText(content);
 
                 String[] aux = nombre.split(" ");
-                int pos = Integer.parseInt(aux[1]);
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder
@@ -129,14 +116,13 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
         });
     }
 
-    private List<ModeloArticulo> filter(List<ModeloArticulo> articulos, String texto){
+    private List<ModeloArticulo> filter(List<ModeloArticulo> articulos, String texto) {
 
         marcado = texto;
         List<ModeloArticulo> list = new ArrayList<>();
         try {
             texto = texto.toLowerCase().trim();
-            for (ModeloArticulo articulo : articulos){
-
+            for (ModeloArticulo articulo : articulos) {
                 String descripcion = articulo.getDescripcion().toLowerCase();
                 String nombre = "Articulo ".toLowerCase() + articulo.getNombre();
                 if (descripcion.contains(texto)) {
@@ -146,18 +132,10 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
                     list.add(articulo);
                 }
             }
-
-        } catch (Exception e){
-
-
+        } catch (Exception e) {
         }
-
-
         return list;
     }
-
-
-
 
     @Override
     public void onDetach() {
@@ -173,7 +151,7 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
     }
 
     @Override
-    public void setBusquedaArticulos(String text) {
+    public void setBusquedaArticulos(final String text) {
 
         BuscarAsync async = new BuscarAsync(new CallBackBuscar() {
             @Override
@@ -181,12 +159,16 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
                 adapter.setFilter(lista);
                 if (lista.size() == 0) {
                     noHay.setVisibility(View.VISIBLE);
-                    if (InfraccionFragment.posicion == posicion) {
-                        InfraccionFragment.pager.setCurrentItem(InfraccionFragment.fragment);
-                    }
+                    InfraccionFragment.canScroll = true;
                 } else {
                     noHay.setVisibility(View.INVISIBLE);
-                    FragmentInfracciones.fragment = posicion;
+                    if (InfraccionFragment.canScroll) {
+                        InfraccionFragment.pager.setCurrentItem(posicion);
+                        InfraccionFragment.canScroll = false;
+                    }
+                }
+                if (text.length() == 0) {
+                    InfraccionFragment.pager.setCurrentItem(0);
                 }
             }
 
@@ -208,7 +190,7 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
         List<ModeloArticulo> listaArticulos;
         CallBackBuscar callBackBuscar;
 
-        public BuscarAsync(CallBackBuscar callBackBuscar, String texto, List<ModeloArticulo> listaArticulos){
+        public BuscarAsync(CallBackBuscar callBackBuscar, String texto, List<ModeloArticulo> listaArticulos) {
             this.callBackBuscar = callBackBuscar;
             this.texto = texto;
             this.listaArticulos = listaArticulos;

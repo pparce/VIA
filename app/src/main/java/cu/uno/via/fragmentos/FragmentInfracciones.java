@@ -64,7 +64,7 @@ public class FragmentInfracciones extends Fragment implements CallBackFragmentIn
     private void initView() {
 
         App.callBackFragmentInfraccion = this;
-        contenedorBuscar = (LinearLayout) view.findViewById(R.id.contenedor_buscador);
+//        contenedorBuscar = (LinearLayout) view.findViewById(R.id.contenedor_buscador);
 
         //TABLAYOUT Y VIEW PAGER
         tab = (TabLayout) view.findViewById(R.id.tab);

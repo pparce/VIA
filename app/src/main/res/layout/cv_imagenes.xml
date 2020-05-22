@@ -13,8 +13,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:foreground="?attr/selectableItemBackground"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:cardCornerRadius="0dp"
+        card_view:cardElevation="0dp">
 
         <FrameLayout
             android:layout_gravity="center"
@@ -28,9 +28,11 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:src="@drawable/libro_ley"
                     android:layout_gravity="center" />
 
@@ -47,8 +49,10 @@
         android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="sin nombre"
         android:textSize="12sp"
-        android:id="@+id/titulo" />
+        android:id="@+id/titulo"
+        android:gravity="center_horizontal" />
 
 </LinearLayout>

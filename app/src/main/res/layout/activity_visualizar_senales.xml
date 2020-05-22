@@ -23,21 +23,18 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
-
         <com.google.android.material.tabs.TabLayout
 
             android:id="@+id/tab"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginBottom="16dp"
             app:tabIndicatorColor="@color/colorNegro"
             app:tabIndicatorHeight="3dp"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/colorNegro_oscuro"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="@color/colorGris"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"/>
+            app:tabTextColor="@color/colorGris" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

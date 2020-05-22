@@ -10,7 +10,6 @@
         android:name="cu.uno.via.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
-
     </fragment>
 
     <fragment

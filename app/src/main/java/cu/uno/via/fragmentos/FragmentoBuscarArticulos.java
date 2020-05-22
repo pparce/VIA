@@ -96,7 +96,7 @@ public class FragmentoBuscarArticulos extends Fragment implements CallbackFragme
                 nombre = "Artículo " + lista.get(posicion).getNombre();
 
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-                final View myview = layoutInflater.inflate(R.layout.dialog_custom_layout, null);
+                final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
                 ImageView imageView = (ImageView) myview.findViewById(R.id.imageView);
                 TextView descripcion = (TextView) myview.findViewById(R.id.descripcion);
 

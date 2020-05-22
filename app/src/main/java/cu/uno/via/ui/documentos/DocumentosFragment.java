@@ -62,8 +62,8 @@ public class DocumentosFragment extends Fragment {
         adapter = new LibrosAdapter(context);
         rvLibros.setLayoutManager(layoutManager);
         rvLibros.setAdapter(adapter);
-        SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(30, 15);
-        rvLibros.addItemDecoration(spacesItemDecoration);
+        /*SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(30, 15);
+        rvLibros.addItemDecoration(spacesItemDecoration);*/
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override

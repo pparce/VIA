@@ -12,16 +12,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/contenedor_buscador"
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.AppBarLayout
+            android:background="@color/colorGris"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible">
-
+            android:theme="@style/AppTheme.AppBarOverlay">
             <androidx.appcompat.widget.SearchView
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/boton_cajon_buscar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -34,7 +32,6 @@
                 android:layout_marginBottom="15dp"
                 app:submitBackground="@android:color/transparent"
                 app:queryBackground="@android:color/transparent" />
-        </LinearLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab"
@@ -49,6 +46,7 @@
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"/>
+           </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
@@ -57,8 +55,8 @@
             android:scrollIndicators="top"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
     </LinearLayout>
+
 
 
 </RelativeLayout>

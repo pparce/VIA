@@ -81,7 +81,6 @@ public class NotasFragment extends Fragment {
                         int posicion = recycler.getChildAdapterPosition(viewAux);
                         viewAux.setSelected(false);
 
-
                         Basedatos basedatos = new Basedatos(context, "datos.db");
                         basedatos.eliminarNota(listaNotas.get(posicion).getId());
 
@@ -142,12 +141,12 @@ public class NotasFragment extends Fragment {
             }
         });*/
 
-        noHay = (LinearLayout) view.findViewById(R.id.noHay);
+        noHay = view.findViewById(R.id.noHay);
 
-        recycler = (RecyclerView) view.findViewById(R.id.recycler);
+        recycler = view.findViewById(R.id.recycler);
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         adapter = new NotasAdapter(context , listaNotas);
-        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(10,10);
+        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(15,15);
         recycler.addItemDecoration(itemDecorationEventos);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
@@ -167,7 +166,7 @@ public class NotasFragment extends Fragment {
                         view.setSelected(false);
                         listaView.remove(view);
                         floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                        floatingTextButton.setTitle(listaView.size() + "");
+                        floatingTextButton.setTitle("Eliminar: " + listaView.size());
 
 
                         if (listaView.isEmpty()) {
@@ -180,7 +179,7 @@ public class NotasFragment extends Fragment {
                         view.setSelected(true);
                         listaView.add(view);
                         floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                        floatingTextButton.setTitle(listaView.size() + "");
+                        floatingTextButton.setTitle("Eliminar: " + listaView.size());
                     }
                 } else {
                     Intent intent = new Intent(context, NuevaNota.class);
@@ -205,7 +204,7 @@ public class NotasFragment extends Fragment {
                     listaView.add(view);
                     eliminar = true;
                     floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                    floatingTextButton.setTitle(listaView.size() + "");
+                    floatingTextButton.setTitle("Eliminar: " + listaView.size());
                 }
                 return true;
             }

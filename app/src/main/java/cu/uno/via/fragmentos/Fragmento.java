@@ -7,13 +7,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -30,7 +29,6 @@ import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
 public class Fragmento extends Fragment {
-
 
 
     Context context;
@@ -81,19 +79,16 @@ public class Fragmento extends Fragment {
                 int posicion = recyclerView.getChildAdapterPosition((View) view.getParent());
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-                final View myview = layoutInflater.inflate(R.layout.dialog_custom_layout, null);
-                ImageView imageView = (ImageView) myview.findViewById(R.id.imageView);
-                TextView descripcion = (TextView) myview.findViewById(R.id.descripcion);
+                final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
+                ImageView imageView = myview.findViewById(R.id.imageView);
+                TextView titulo = myview.findViewById(R.id.titulo);
+                TextView descripcion = myview.findViewById(R.id.descripcion);
                 imageView.setImageBitmap(list.get(posicion).getCaratula());
 
-                String content = list.get(posicion).getDescripcion();
-                Spanned html = Html.fromHtml(content);
-
-                descripcion.setText(content);
-
+                titulo.setText(list.get(posicion).getTipo());
+                descripcion.setText(list.get(posicion).getDescripcion());
 
                 builder
-                        .setTitle(list.get(posicion).getTipo())
                         .setView(myview)
                         .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -123,8 +118,6 @@ public class Fragmento extends Fragment {
         });
 
     }
-
-
 
 
     @Override

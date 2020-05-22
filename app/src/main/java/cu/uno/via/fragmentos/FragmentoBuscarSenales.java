@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,6 @@ import cu.uno.via.R;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscarSenales;
-import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
 
 public class FragmentoBuscarSenales extends Fragment implements CallbackFragmentBuscarSenales {
@@ -72,7 +72,7 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
             }
         }
 
-        noHay = (LinearLayout) view.findViewById(R.id.noHay);
+        noHay = view.findViewById(R.id.noHay);
 
         App.callbackFragmentBuscarSenales = this;
 
@@ -81,8 +81,6 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
         adapter = new BuscarSenalesAdapter(context, listaSenal);
         rvLibros.setLayoutManager(layoutManager);
         rvLibros.setAdapter(adapter);
-        SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(30, 15);
-        rvLibros.addItemDecoration(spacesItemDecoration);
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,14 +88,13 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-                final View myview = layoutInflater.inflate(R.layout.dialog_custom_layout, null);
-                ImageView imageView = (ImageView) myview.findViewById(R.id.imageView);
-                TextView descripcion = (TextView) myview.findViewById(R.id.descripcion);
+                final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
+                ImageView imageView = myview.findViewById(R.id.imageView);
+                TextView descripcion = myview.findViewById(R.id.descripcion);
 
-                String content =  adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getDescripcion();
+                String content = adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getDescripcion();
                 descripcion.setText(content);
                 imageView.setImageBitmap(adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getCaratula());
-
 
 
                 builder

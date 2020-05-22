@@ -48,8 +48,8 @@ public class SenalesFragment extends Fragment {
         adapter = new SenalesAdapter(context);
         rvLibros.setLayoutManager(layoutManager);
         rvLibros.setAdapter(adapter);
-        SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(30, 15);
-        rvLibros.addItemDecoration(spacesItemDecoration);
+        /*SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(30, 15);
+        rvLibros.addItemDecoration(spacesItemDecoration);*/
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
