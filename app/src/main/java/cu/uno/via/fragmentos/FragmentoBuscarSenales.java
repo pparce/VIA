@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import cu.uno.via.Adaptadores.BuscarSenalesAdapter;
 import cu.uno.via.DataBase.ModeloArticulo;
 import cu.uno.via.DataBase.ModeloSenal;
 import cu.uno.via.R;
+import cu.uno.via.actividades.Buscar;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscarSenales;
@@ -76,7 +78,7 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
 
         App.callbackFragmentBuscarSenales = this;
 
-        rvLibros = (RecyclerView) view.findViewById(R.id.rvSenales);
+        rvLibros = view.findViewById(R.id.rvSenales);
         layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         adapter = new BuscarSenalesAdapter(context, listaSenal);
         rvLibros.setLayoutManager(layoutManager);
@@ -86,19 +88,22 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
             @Override
             public void onClick(View view) {
 
+                if (Buscar.searchView != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(Buscar.searchView .getWindowToken(), 0);
+                }
+
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
                 final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
                 ImageView imageView = myview.findViewById(R.id.imageView);
+                TextView titulo = myview.findViewById(R.id.titulo);
                 TextView descripcion = myview.findViewById(R.id.descripcion);
-
                 String content = adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getDescripcion();
                 descripcion.setText(content);
+                titulo.setText(adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getTipo());
                 imageView.setImageBitmap(adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getCaratula());
-
-
                 builder
-                        .setTitle(adapter.getLista().get(rvLibros.getChildAdapterPosition(view)).getTipo())
                         .setView(myview)
                         .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

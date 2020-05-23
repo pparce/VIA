@@ -763,7 +763,7 @@ public class VisualizarPdf extends AppCompatActivity implements CallbackLibro, C
     private void setDialog(String title, String message) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(VisualizarPdf.this);
-        final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
+        final View myview = layoutInflater.inflate(R.layout.dialog_layout_articulo, null);
         TextView descripcion = myview.findViewById(R.id.descripcion);
 
 

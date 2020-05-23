@@ -74,7 +74,6 @@ public class Fragmento extends Fragment {
             @Override
             public void onClick(View view) {
 
-
                 List<ModeloSenal> list = App.LISTA_SENALES.get(VisualizarSenales.posicion).getListaTipoSenales().get(getArguments().getInt("posicion")).getListaSenal();
                 int posicion = recyclerView.getChildAdapterPosition((View) view.getParent());
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -84,10 +83,8 @@ public class Fragmento extends Fragment {
                 TextView titulo = myview.findViewById(R.id.titulo);
                 TextView descripcion = myview.findViewById(R.id.descripcion);
                 imageView.setImageBitmap(list.get(posicion).getCaratula());
-
                 titulo.setText(list.get(posicion).getTipo());
                 descripcion.setText(list.get(posicion).getDescripcion());
-
                 builder
                         .setView(myview)
                         .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
@@ -98,7 +95,6 @@ public class Fragmento extends Fragment {
                         });
 
                 final AlertDialog dialog = builder.create();
-
                 dialog.getWindow().getAttributes().windowAnimations = R.style.AnimacionDialog1;
                 dialog.setCancelable(true);
                 dialog.show();

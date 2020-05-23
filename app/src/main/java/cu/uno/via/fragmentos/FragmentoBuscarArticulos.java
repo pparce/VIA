@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import cu.uno.via.Adaptadores.BuscarArticulosAdapter;
 import cu.uno.via.DataBase.ModeloArticulo;
 import cu.uno.via.DataBase.ModeloSenal;
 import cu.uno.via.R;
+import cu.uno.via.actividades.Buscar;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscar;
@@ -32,49 +34,34 @@ import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
 public class FragmentoBuscarArticulos extends Fragment implements CallbackFragmentBuscar {
 
-
-
     Context context;
     View view;
-
     List<ModeloArticulo> listaArticulos;
-
     LinearLayout noHay;
-
     RecyclerView rvLibros;
     LinearLayoutManager layoutManager;
     BuscarArticulosAdapter adapter;
-
     public static String marcado = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_buscar_articulos, container, false);
-
-
-        Inicializar();
-
+        initView();
         return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
     @SuppressLint("WrongConstant")
-    private void Inicializar(){
+    private void initView(){
 
         App.callbackFragmentBuscar = this;
-
         listaArticulos = new ArrayList<>();
         listaArticulos = App.LISTA_ARTICULOS;
-
-
         noHay = (LinearLayout) view.findViewById(R.id.noHay);
-
 
         rvLibros = (RecyclerView) view.findViewById(R.id.rvArticulos);
         layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
@@ -87,25 +74,22 @@ public class FragmentoBuscarArticulos extends Fragment implements CallbackFragme
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (Buscar.searchView != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(Buscar.searchView .getWindowToken(), 0);
+                }
 
                 String nombre = "";
-
                 int posicion = rvLibros.getChildAdapterPosition(view);
                 List<ModeloArticulo> lista = adapter.getLista();
-
                 nombre = "Artículo " + lista.get(posicion).getNombre();
-
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-                final View myview = layoutInflater.inflate(R.layout.dialog_layout_senales, null);
+                final View myview = layoutInflater.inflate(R.layout.dialog_layout_articulo, null);
                 ImageView imageView = (ImageView) myview.findViewById(R.id.imageView);
                 TextView descripcion = (TextView) myview.findViewById(R.id.descripcion);
-
                 String content = lista.get(posicion).getDescripcion();
                 descripcion.setText(content);
-
                 String[] aux = nombre.split(" ");
-                int pos = Integer.parseInt(aux[1]);
-
                 final AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder
                         .setTitle(nombre)
@@ -117,7 +101,6 @@ public class FragmentoBuscarArticulos extends Fragment implements CallbackFragme
                         });
 
                 final AlertDialog dialog = builder.create();
-
                 dialog.getWindow().getAttributes().windowAnimations = R.style.AnimacionDialog1;
                 dialog.setCancelable(true);
                 dialog.show();

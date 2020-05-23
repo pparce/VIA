@@ -21,7 +21,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,7 @@ import cu.uno.via.DataBase.Basedatos;
 import cu.uno.via.DataBase.ModeloNotas;
 import cu.uno.via.R;
 import cu.uno.via.actividades.NuevaNota;
+import cu.uno.via.utiles.GridItemSpacingDecoration;
 import cu.uno.via.utiles.SpacesItemDecorationEventos;
 import cu.uno.via.utiles.floatingtextbutton.FloatingTextButton;
 
@@ -40,20 +43,14 @@ public class NotasFragment extends Fragment {
     View view;
     Context context;
     FloatingActionButton fab;
-    FloatingTextButton floatingTextButton;
-
     Cursor cursor;
     Basedatos basedatos;
     public static List<ModeloNotas> listaNotas;
-
     RecyclerView recycler;
     RecyclerView.LayoutManager layoutManager;
     NotasAdapter adapter;
-
     LinearLayout noHay;
-
     List<View> listaView;
-
     boolean eliminar = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -69,8 +66,8 @@ public class NotasFragment extends Fragment {
 
         listaNotas = new ArrayList<>();
         cargarNotas();
-        floatingTextButton = view.findViewById(R.id.call_button);
-        floatingTextButton.setOnClickListener(new View.OnClickListener() {
+        fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!eliminar) {
@@ -80,73 +77,29 @@ public class NotasFragment extends Fragment {
                         View viewAux = listaView.get(i);
                         int posicion = recycler.getChildAdapterPosition(viewAux);
                         viewAux.setSelected(false);
-
                         Basedatos basedatos = new Basedatos(context, "datos.db");
                         basedatos.eliminarNota(listaNotas.get(posicion).getId());
-
                         listaNotas.remove(posicion);
                         adapter.notifyItemRemoved(posicion);
                     }
-
-                    floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_add));
-                    floatingTextButton.setTitle("Nueva nota");
-
+                    fab.setImageResource(R.drawable.ic_add);
                     eliminar = false;
                     listaView.clear();
-
-                    Toast.makeText(context, "Nota Eliminada", Toast.LENGTH_SHORT).show();
-
+                    Snackbar.make(view, "Nota eliminada", Snackbar.LENGTH_SHORT).show();
                     if (listaNotas.size() == 0) {
                         noHay.setVisibility(View.VISIBLE);
                     } else {
                         noHay.setVisibility(View.INVISIBLE);
                     }
-
                 }
             }
         });
-        /*fab = (FloatingActionButton) view.findViewById(R.id.fab);
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!eliminar) {
-                    startActivity(new  Intent(context, NuevaNota.class));
-                } else {
-                    for (int i = 0; i < listaView.size(); i++) {
-                        View viewAux = listaView.get(i);
-                        int posicion = recycler.getChildAdapterPosition(viewAux);
-                        viewAux.setSelected(false);
-
-
-                        Basedatos basedatos = new Basedatos(context, "datos.db");
-                        basedatos.eliminarNota(listaNotas.get(posicion).getId());
-
-                        listaNotas.remove(posicion);
-                        adapter.notifyItemRemoved(posicion);
-                    }
-
-                    eliminar = false;
-                    listaView.clear();
-                    fab.setImageResource(R.drawable.ic_add);
-
-                    if (listaNotas.size() == 0) {
-                        noHay.setVisibility(View.VISIBLE);
-                    } else {
-                        noHay.setVisibility(View.INVISIBLE);
-                    }
-
-                }
-            }
-        });*/
 
         noHay = view.findViewById(R.id.noHay);
-
         recycler = view.findViewById(R.id.recycler);
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         adapter = new NotasAdapter(context , listaNotas);
-        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(15,15);
+        GridItemSpacingDecoration itemDecorationEventos = new GridItemSpacingDecoration(2, 45, true);
         recycler.addItemDecoration(itemDecorationEventos);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
@@ -165,21 +118,18 @@ public class NotasFragment extends Fragment {
                     if (view.isSelected()) {
                         view.setSelected(false);
                         listaView.remove(view);
-                        floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                        floatingTextButton.setTitle("Eliminar: " + listaView.size());
+                        fab.setImageResource(R.drawable.ic_eliminar);
 
 
                         if (listaView.isEmpty()) {
                             eliminar = false;
-                            floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_add));
-                            floatingTextButton.setTitle("Nueva nota");
+                            fab.setImageResource(R.drawable.ic_add);
                         }
 
                     } else {
                         view.setSelected(true);
                         listaView.add(view);
-                        floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                        floatingTextButton.setTitle("Eliminar: " + listaView.size());
+                        fab.setImageResource(R.drawable.ic_eliminar);
                     }
                 } else {
                     Intent intent = new Intent(context, NuevaNota.class);
@@ -199,12 +149,10 @@ public class NotasFragment extends Fragment {
 
                 if (!eliminar) {
                     listaView = new ArrayList<View>();
-
                     view.setSelected(true);
                     listaView.add(view);
                     eliminar = true;
-                    floatingTextButton.setRightIconDrawable(context.getDrawable(R.drawable.ic_eliminar));
-                    floatingTextButton.setTitle("Eliminar: " + listaView.size());
+                    fab.setImageResource(R.drawable.ic_eliminar);
                 }
                 return true;
             }
@@ -212,11 +160,9 @@ public class NotasFragment extends Fragment {
     }
 
     private void cargarNotas() {
-
         basedatos = new Basedatos(context, "datos.db");
         cursor = basedatos.cargarNotas();
         List<ModeloNotas> listaArticulos = new ArrayList<>();
-
 
         if (cursor != null && cursor.getCount() > 0) {
             /**set value to list one by one**/

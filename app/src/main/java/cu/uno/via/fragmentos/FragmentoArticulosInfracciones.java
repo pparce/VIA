@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +25,8 @@ import cu.uno.via.Adaptadores.ArticulosInfraccionAdapter;
 import cu.uno.via.DataBase.ModeloArticulo;
 import cu.uno.via.DataBase.ModeloSenal;
 import cu.uno.via.R;
+import cu.uno.via.actividades.Buscar;
+import cu.uno.via.actividades.MainActivity;
 import cu.uno.via.ui.infraccion.InfraccionFragment;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
@@ -41,7 +43,7 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
 
     LinearLayout noHay;
 
-    RecyclerView rvLibros;
+    RecyclerView recyclerview;
     LinearLayoutManager layoutManager;
     ArticulosInfraccionAdapter adapter;
 
@@ -75,28 +77,29 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
         listaArticulos = App.LISTA_INFRACCION.get(posicion).getListaArticulos();
 
         noHay = view.findViewById(R.id.noHay);
-        rvLibros = view.findViewById(R.id.rvArticulos);
+        recyclerview = view.findViewById(R.id.rvArticulos);
         layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         adapter = new ArticulosInfraccionAdapter(context, App.LISTA_INFRACCION.get(posicion).getListaArticulos());
-        rvLibros.setLayoutManager(layoutManager);
-        rvLibros.setAdapter(adapter);
+        recyclerview.setLayoutManager(layoutManager);
+        recyclerview.setAdapter(adapter);
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (MainActivity.focusedView != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(MainActivity.focusedView .getWindowToken(), 0);
+                }
                 String nombre = "";
-                int posicion = rvLibros.getChildAdapterPosition(view);
+                int posicion = recyclerview.getChildAdapterPosition(view);
                 List<ModeloArticulo> lista = adapter.getLista();
                 nombre = "Artículo " + lista.get(posicion).getNombre();
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
                 final View myview = layoutInflater.inflate(R.layout.dialog_layout_articulo, null);
                 TextView descripcion = myview.findViewById(R.id.descripcion);
-
                 String content = lista.get(posicion).getDescripcion();
                 descripcion.setText(content);
-
                 String[] aux = nombre.split(" ");
-
                 final AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder
                         .setTitle(nombre)

@@ -11,16 +11,18 @@
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/nav_header_desc"
         app:srcCompat="@drawable/via_negro"
-        android:layout_margin="16dp"/>
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Nunca pares de estudiar."
+        android:layout_margin="16dp"
+        android:text="Nunca pares de aprender."
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         android:textSize="13sp" />
     <View

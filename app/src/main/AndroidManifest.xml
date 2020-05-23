@@ -44,6 +44,14 @@
         <activity
             android:name=".actividades.NuevaNota"
             android:label="@string/title_activity_nueva_nota"
+            android:windowSoftInputMode="stateAlwaysVisible"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".actividades.Buscar"
+            android:label=""
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data

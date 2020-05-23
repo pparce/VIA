@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="15sp"
-                    android:maxLines="10"
+                    android:maxLines="20"
                     android:ellipsize="end"/>
             </LinearLayout>
 

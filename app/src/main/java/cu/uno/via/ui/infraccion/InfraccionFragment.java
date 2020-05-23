@@ -27,6 +27,7 @@ import java.util.List;
 import cu.uno.via.Adaptadores.ViewPagerInfraccionesAdapter;
 import cu.uno.via.DataBase.ModeloArticulo;
 import cu.uno.via.R;
+import cu.uno.via.actividades.MainActivity;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackFragmentInfraccion;
 
@@ -79,6 +80,7 @@ public class InfraccionFragment extends Fragment implements  SearchView.OnQueryT
         });
 
         searchView = view.findViewById(R.id.searchView);
+        MainActivity.focusedView = searchView;
         searchView.setOnQueryTextListener(this);
         searchView.requestFocus();
     }

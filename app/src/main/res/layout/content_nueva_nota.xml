@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".NuevaNota"
+    tools:context=".actividades.NuevaNota"
     tools:showIn="@layout/activity_nueva_nota">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/nota"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
+        android:focusable="true"
+        android:focusedByDefault="true"
         android:background="#ffffff"
         android:ems="10"
         android:gravity="start|top"
