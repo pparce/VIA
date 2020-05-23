@@ -40,7 +40,6 @@ public class EvaluarFragment extends Fragment {
         itemPersonalizado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String[] items = {"Señales","Limites de Velocidad", "Importes"};
                 boolean[] itemsEstados = {false, false, false, false};
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
