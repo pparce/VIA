@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".actividades.Buscar">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/appBarLayout"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:title=""
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:contentInsetStartWithNavigation="0dp"
+                app:contentInsetEndWithActions="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetEnd="16dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp">
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:background="@drawable/boton_cajon_buscar"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:id="@+id/searchView"
+                        android:submitBackground="@android:color/transparent"
+                        android:queryBackground="@android:color/transparent"
+                        app:queryHint="Buscar.."
+                        app:theme="@style/SearchView"
+                        app:searchIcon="@null"
+                        app:iconifiedByDefault="false" />
+
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabIndicatorColor="@color/colorNegro"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/colorNegro_oscuro"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/colorGris" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+
+    <include layout="@layout/content_buscar" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
