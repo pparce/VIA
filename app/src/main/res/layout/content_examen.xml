@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".actividades.ActivityNuevaNota"
+    tools:showIn="@layout/activity_examen">
+
+    <com.stepstone.stepper.StepperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/stepperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ms_stepperType="none"
+        app:ms_bottomNavigationBackground="@drawable/boton_cajon_border_elevacion"
+        app:ms_tabNavigationEnabled="false"
+        app:ms_nextButtonColor="@color/colorAccent"
+        app:ms_backButtonColor="@color/colorAccent"
+        app:ms_backButtonBackground="@android:color/transparent"
+        app:ms_completeButtonText="@string/title_stepper_completado"
+        app:ms_completeButtonBackground="@color/colorAccent"
+        app:ms_completeButtonColor="@color/colorPrimary"
+        app:ms_nextButtonText="@string/title_stepper_continuar"
+        app:ms_backButtonText="@string/title_stepper_atras"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

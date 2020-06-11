@@ -3,8 +3,8 @@ package cu.uno.via.utiles.CallBacks;
 
 import java.util.List;
 
-import cu.uno.via.DataBase.ModeloArticulo;
-import cu.uno.via.DataBase.ModeloSenal;
+import cu.uno.via.database.modelos.ModeloArticulo;
+import cu.uno.via.database.modelos.ModeloSenal;
 
 /**
  * Created by Administrador on 06/02/2019.

@@ -5,12 +5,29 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="home_second">Home Second</string>
+
     <string name="action_settings">Settings</string>
     <string name="action_buscar">Buscar</string>
+    <string name="action_comenzar">Comenzar</string>
 
     <string name="title_activity_buscar">Buscar</string>
     <string name="title_activity_visualizar_senales">VisualizarSenales</string>
     <string name="title_activity_nueva_nota">Nueva Nota</string>
+    <string name="title_activity_examenes">Examenes</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_info">Información</string>
+    <string name="title_activity_config">Configuración</string>
+
+    <string name="title_stepper">paso</string>
+    <string name="title_stepper_continuar">Continuar</string>
+    <string name="title_stepper_atras">Atras</string>
+    <string name="title_stepper_completado">Evaluar</string>
+    <string name="title_stepper_listado">Listado</string>
+    <string name="title_stepper_envio">Envio</string>
+    <string name="title_stepper_pago">Pago</string>
+
+    <string name="title_opciones">Opciones</string>
 
     <string name="menu_home">Inicio</string>
     <string name="menu_infraccion">Infracción</string>
@@ -18,11 +35,11 @@
     <string name="menu_senales">Señales</string>
     <string name="menu_evaluar">Evaluar</string>
     <string name="menu_notas">Notas</string>
-    <string name="menu_info">Info</string>
+    <string name="menu_info">Información</string>
+    <string name="menu_settings">Configuración</string>
 
-    <string name="home_second">Home Second</string>
+    <string name="info_examen">A continuacion se le presentan 20 preguntas seleccionadas cuidadosamente para evaluar su conocimiento teorico de la ley 109</string>
 
-    <string name="title_activity_splash">Splash</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

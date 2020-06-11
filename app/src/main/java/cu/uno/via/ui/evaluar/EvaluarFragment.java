@@ -3,27 +3,27 @@ package cu.uno.via.ui.evaluar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import cu.uno.via.R;
+import cu.uno.via.actividades.ActivityExamen;
 
 public class EvaluarFragment extends Fragment {
 
     private EvaluarViewModel slideshowViewModel;
     View view;
     Context context;
-    CardView itemPersonalizado;
+    CardView itemPersonalizado, itemExamen;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +36,8 @@ public class EvaluarFragment extends Fragment {
 
     private void initView() {
 
-        itemPersonalizado = (CardView) view.findViewById(R.id.itemPersonalizado);
+        itemPersonalizado = view.findViewById(R.id.itemPersonalizado);
+        itemExamen = view.findViewById(R.id.itemExamen);
         itemPersonalizado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +63,12 @@ public class EvaluarFragment extends Fragment {
                 dialog.show();
             }
         });
-
+        itemExamen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, ActivityExamen.class));
+            }
+        });
     }
 
 

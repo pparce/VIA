@@ -6,16 +6,12 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
-    card_view:cardElevation="5dp"
-    card_view:cardCornerRadius="5dp">
-
-    <FrameLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    card_view:cardBackgroundColor="@android:color/transparent"
+    card_view:cardElevation="0dp"
+    card_view:cardCornerRadius="0dp">
 
         <LinearLayout
+            android:layout_margin="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -53,9 +49,12 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/listDivider" />
 
-
-
-    </FrameLayout>
 
 </androidx.cardview.widget.CardView>

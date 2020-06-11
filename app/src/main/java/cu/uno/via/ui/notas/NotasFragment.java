@@ -9,33 +9,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.NotasAdapter;
-import cu.uno.via.DataBase.Basedatos;
-import cu.uno.via.DataBase.ModeloNotas;
+import cu.uno.via.adaptadores.NotasAdapter;
+import cu.uno.via.database.Basedatos;
+import cu.uno.via.database.modelos.ModeloNotas;
 import cu.uno.via.R;
-import cu.uno.via.actividades.NuevaNota;
+import cu.uno.via.actividades.ActivityNuevaNota;
 import cu.uno.via.utiles.GridItemSpacingDecoration;
-import cu.uno.via.utiles.SpacesItemDecorationEventos;
-import cu.uno.via.utiles.floatingtextbutton.FloatingTextButton;
 
 public class NotasFragment extends Fragment {
 
@@ -71,7 +64,7 @@ public class NotasFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (!eliminar) {
-                    startActivity(new Intent(context, NuevaNota.class));
+                    startActivity(new Intent(context, ActivityNuevaNota.class));
                 } else {
                     for (int i = 0; i < listaView.size(); i++) {
                         View viewAux = listaView.get(i);
@@ -132,7 +125,7 @@ public class NotasFragment extends Fragment {
                         fab.setImageResource(R.drawable.ic_eliminar);
                     }
                 } else {
-                    Intent intent = new Intent(context, NuevaNota.class);
+                    Intent intent = new Intent(context, ActivityNuevaNota.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("nota", listaNotas.get(recycler.getChildAdapterPosition(view)).getDescripcion());
                     bundle.putInt("posicion", recycler.getChildAdapterPosition(view));

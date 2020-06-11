@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorNavigationItem" format="color" />
+    <attr name="colorNavigationItemSelected" format="color" />
+    <attr name="drawableNavigationItemBackground" format="reference" />
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="BounceScrollView">
+        <attr name="damping" format="float" />
+        <attr name="scrollOrientation" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+        <attr name="incrementalDamping" format="boolean" />
+        <attr name="bounceDelay" format="integer" />
+        <attr name="triggerOverScrollThreshold" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingTextButton">
+        <attr name="floating_left_icon" format="reference" />
+        <attr name="floating_right_icon" format="reference" />
+        <attr name="floating_title" format="string|reference" />
+        <attr name="floating_title_color" format="reference|color" />
+        <attr name="floating_background_color" format="reference|color" />
+    </declare-styleable>
+</resources>

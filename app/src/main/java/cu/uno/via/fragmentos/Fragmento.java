@@ -21,10 +21,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import cu.uno.via.Adaptadores.ImagenesSenalesAdapter;
-import cu.uno.via.DataBase.ModeloSenal;
+import cu.uno.via.adaptadores.ImagenesSenalesAdapter;
+import cu.uno.via.database.modelos.ModeloSenal;
 import cu.uno.via.R;
-import cu.uno.via.actividades.VisualizarSenales;
+import cu.uno.via.actividades.ActivityVisualizarSenales;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
@@ -40,7 +40,7 @@ public class Fragmento extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.frag_tab, container, false);
+        view = inflater.inflate(R.layout.fragment_tab, container, false);
 
 
         Inicializar();
@@ -74,7 +74,7 @@ public class Fragmento extends Fragment {
             @Override
             public void onClick(View view) {
 
-                List<ModeloSenal> list = App.LISTA_SENALES.get(VisualizarSenales.posicion).getListaTipoSenales().get(getArguments().getInt("posicion")).getListaSenal();
+                List<ModeloSenal> list = App.LISTA_SENALES.get(ActivityVisualizarSenales.posicion).getListaTipoSenales().get(getArguments().getInt("posicion")).getListaSenal();
                 int posicion = recyclerView.getChildAdapterPosition((View) view.getParent());
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
@@ -106,9 +106,9 @@ public class Fragmento extends Fragment {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
                 if (recyclerView.canScrollVertically(-1)) {
-                    VisualizarSenales.onScrollCallback.onScroll(false);
+                    ActivityVisualizarSenales.onScrollCallback.onScroll(false);
                 } else {
-                    VisualizarSenales.onScrollCallback.onScroll(true);
+                    ActivityVisualizarSenales.onScrollCallback.onScroll(true);
                 }
             }
         });

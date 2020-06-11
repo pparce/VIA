@@ -2,18 +2,14 @@ package cu.uno.via.ui.documentos;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,10 +19,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import cu.uno.via.Adaptadores.LibrosAdapter;
+import cu.uno.via.adaptadores.LibrosAdapter;
 import cu.uno.via.R;
-import cu.uno.via.actividades.VisualizarPdf;
-import cu.uno.via.utiles.SpacesItemDecorationEventos;
+import cu.uno.via.actividades.ActivityArbol;
+import cu.uno.via.actividades.ActivityPdfView;
 
 public class DocumentosFragment extends Fragment {
 
@@ -68,24 +64,27 @@ public class DocumentosFragment extends Fragment {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, VisualizarPdf.class);
+                /*Intent intent = new Intent(context, ActivityVisualizarPdf.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("posicion", rvLibros.getChildAdapterPosition(view));
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startActivity(intent);*/
 
-                /*int posicion = rvLibros.getChildAdapterPosition(view);
-
+                int posicion = rvLibros.getChildAdapterPosition(view);
+                Intent intent = new Intent(context, ActivityPdfView.class);
                 switch (posicion){
                     case 0:
+                        startActivity(new Intent(context, ActivityArbol.class));
                         break;
                     case 1:
-                        abrirPdf("ley109.pdf");
+                        intent.putExtra("LIBRO","Codigo vial ilustrado.pdf");
+                        startActivity(intent);
                         break;
                     case 2:
-                        abrirPdf("MANUAL.pdf");
+                        intent.putExtra("LIBRO","Guia de estudio.pdf");
+                        startActivity(intent);
                         break;
-                }*/
+                }
 
 
 

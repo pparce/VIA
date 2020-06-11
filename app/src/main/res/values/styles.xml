@@ -26,6 +26,10 @@
         <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
     </style>
 
+    <style name="TransparentView">
+        <item name="background">@android:color/transparent</item>
+    </style>
+
     <style name="Splash" parent="AppTheme.NoActionBar">
         <item name="android:background">@drawable/splash</item>
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>

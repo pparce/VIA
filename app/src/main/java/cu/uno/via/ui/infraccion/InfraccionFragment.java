@@ -1,21 +1,14 @@
 package cu.uno.via.ui.infraccion;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
@@ -24,12 +17,11 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.ViewPagerInfraccionesAdapter;
-import cu.uno.via.DataBase.ModeloArticulo;
+import cu.uno.via.adaptadores.ViewPagerInfraccionesAdapter;
+import cu.uno.via.database.modelos.ModeloArticulo;
 import cu.uno.via.R;
-import cu.uno.via.actividades.MainActivity;
+import cu.uno.via.actividades.ActivityPrincipal;
 import cu.uno.via.utiles.App;
-import cu.uno.via.utiles.CallBacks.CallBackFragmentInfraccion;
 
 public class InfraccionFragment extends Fragment implements  SearchView.OnQueryTextListener{
 
@@ -80,7 +72,7 @@ public class InfraccionFragment extends Fragment implements  SearchView.OnQueryT
         });
 
         searchView = view.findViewById(R.id.searchView);
-        MainActivity.focusedView = searchView;
+        ActivityPrincipal.focusedView = searchView;
         searchView.setOnQueryTextListener(this);
         searchView.requestFocus();
     }

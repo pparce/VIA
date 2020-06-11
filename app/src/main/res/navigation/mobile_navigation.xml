@@ -43,9 +43,15 @@
         android:label="@string/menu_notas"
         tools:layout="@layout/fragment_notas" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_info"
-        android:name="cu.uno.via.ui.info.InfoFragment"
+        android:name="cu.uno.via.actividades.ActivityInfo"
         android:label="@string/menu_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/activity_info" />
+
+    <activity
+        android:id="@+id/nav_setting"
+        android:name="cu.uno.via.actividades.ActivityInfo"
+        android:label="@string/menu_info"
+        tools:layout="@layout/activity_info" />
 </navigation>

@@ -2,25 +2,20 @@ package cu.uno.via.ui.senales;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cu.uno.via.Adaptadores.SenalesAdapter;
+import cu.uno.via.adaptadores.SenalesAdapter;
 import cu.uno.via.R;
-import cu.uno.via.actividades.VisualizarSenales;
-import cu.uno.via.utiles.SpacesItemDecorationEventos;
+import cu.uno.via.actividades.ActivityVisualizarSenales;
 
 public class SenalesFragment extends Fragment {
 
@@ -54,7 +49,7 @@ public class SenalesFragment extends Fragment {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, VisualizarSenales.class);
+                Intent intent = new Intent(context, ActivityVisualizarSenales.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("posicion", rvLibros.getChildAdapterPosition(view));
 

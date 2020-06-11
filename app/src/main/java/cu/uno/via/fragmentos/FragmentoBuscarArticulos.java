@@ -21,11 +21,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.BuscarArticulosAdapter;
-import cu.uno.via.DataBase.ModeloArticulo;
-import cu.uno.via.DataBase.ModeloSenal;
+import cu.uno.via.adaptadores.BuscarArticulosAdapter;
+import cu.uno.via.database.modelos.ModeloArticulo;
+import cu.uno.via.database.modelos.ModeloSenal;
 import cu.uno.via.R;
-import cu.uno.via.actividades.Buscar;
+import cu.uno.via.actividades.ActivityBuscar;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscar;
@@ -66,17 +66,17 @@ public class FragmentoBuscarArticulos extends Fragment implements CallbackFragme
         rvLibros = (RecyclerView) view.findViewById(R.id.rvArticulos);
         layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         adapter = new BuscarArticulosAdapter(context);
-        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(20,5);
-        rvLibros.addItemDecoration(itemDecorationEventos);
+        /*SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(20,5);
+        rvLibros.addItemDecoration(itemDecorationEventos);*/
         rvLibros.setLayoutManager(layoutManager);
         rvLibros.setAdapter(adapter);
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Buscar.searchView != null) {
+                if (ActivityBuscar.searchView != null) {
                     InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(Buscar.searchView .getWindowToken(), 0);
+                    inputMethodManager.hideSoftInputFromWindow(ActivityBuscar.searchView .getWindowToken(), 0);
                 }
 
                 String nombre = "";

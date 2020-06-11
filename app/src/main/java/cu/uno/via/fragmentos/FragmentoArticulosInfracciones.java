@@ -21,12 +21,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.ArticulosInfraccionAdapter;
-import cu.uno.via.DataBase.ModeloArticulo;
-import cu.uno.via.DataBase.ModeloSenal;
+import cu.uno.via.adaptadores.ArticulosInfraccionAdapter;
+import cu.uno.via.database.modelos.ModeloArticulo;
+import cu.uno.via.database.modelos.ModeloSenal;
 import cu.uno.via.R;
-import cu.uno.via.actividades.Buscar;
-import cu.uno.via.actividades.MainActivity;
+import cu.uno.via.actividades.ActivityPrincipal;
 import cu.uno.via.ui.infraccion.InfraccionFragment;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
@@ -86,9 +85,9 @@ public class FragmentoArticulosInfracciones extends Fragment implements Callback
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (MainActivity.focusedView != null) {
+                if (ActivityPrincipal.focusedView != null) {
                     InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(MainActivity.focusedView .getWindowToken(), 0);
+                    inputMethodManager.hideSoftInputFromWindow(ActivityPrincipal.focusedView .getWindowToken(), 0);
                 }
                 String nombre = "";
                 int posicion = recyclerview.getChildAdapterPosition(view);

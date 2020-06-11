@@ -16,8 +16,8 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.ViewPagerInfraccionesAdapter;
-import cu.uno.via.DataBase.ModeloArticulo;
+import cu.uno.via.adaptadores.ViewPagerInfraccionesAdapter;
+import cu.uno.via.database.modelos.ModeloArticulo;
 import cu.uno.via.R;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackFragmentInfraccion;

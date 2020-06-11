@@ -22,11 +22,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.Adaptadores.BuscarSenalesAdapter;
-import cu.uno.via.DataBase.ModeloArticulo;
-import cu.uno.via.DataBase.ModeloSenal;
+import cu.uno.via.adaptadores.BuscarSenalesAdapter;
+import cu.uno.via.database.modelos.ModeloArticulo;
+import cu.uno.via.database.modelos.ModeloSenal;
 import cu.uno.via.R;
-import cu.uno.via.actividades.Buscar;
+import cu.uno.via.actividades.ActivityBuscar;
 import cu.uno.via.utiles.App;
 import cu.uno.via.utiles.CallBacks.CallBackBuscar;
 import cu.uno.via.utiles.CallBacks.CallbackFragmentBuscarSenales;
@@ -88,9 +88,9 @@ public class FragmentoBuscarSenales extends Fragment implements CallbackFragment
             @Override
             public void onClick(View view) {
 
-                if (Buscar.searchView != null) {
+                if (ActivityBuscar.searchView != null) {
                     InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(Buscar.searchView .getWindowToken(), 0);
+                    inputMethodManager.hideSoftInputFromWindow(ActivityBuscar.searchView .getWindowToken(), 0);
                 }
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
