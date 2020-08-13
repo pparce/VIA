@@ -36,12 +36,16 @@ public class DB {
         return dataBase.rawQuery("Select * from " + tabla + " where " + columna + "='" + id + "'", null);
     }
 
-    public Cursor cargarArticulos() {
-        return dataBase.rawQuery("Select * from ARTICULOS", null);
+    public Cursor deleteById(String tabla, int id) {
+        return dataBase.rawQuery("delete from " + tabla + " where id= " + id, null);
     }
 
-    public Cursor cargarNotas() {
-        return dataBase.rawQuery("Select * from NOTAS", null);
+    public Cursor updateByField(String tabla, String field, String value, int id) {
+        return dataBase.rawQuery("update " + tabla + " set " + value + " = " + value + " where id= " + id, null);
+    }
+
+    public Cursor cargarArticulos() {
+        return dataBase.rawQuery("Select * from ARTICULOS", null);
     }
 
     public Cursor cargarTipoSenales(int id) {
@@ -64,6 +68,10 @@ public class DB {
         return dataBase.rawQuery("Select * from ARTICULOS_INFRACCION where categoria='" + id + "'", null);
     }
 
+    public Cursor cargarNotas() {
+        return dataBase.rawQuery("Select * from NOTAS", null);
+    }
+
     public void agregarNota(String nota) {
         dataBase.execSQL("insert into NOTAS (descripcion) values(" + "'" + nota + "')");
     }
@@ -74,5 +82,9 @@ public class DB {
 
     public void editarNota(int id, String nota) {
         dataBase.execSQL("update NOTAS set descripcion = '" + nota + "' where id= " + id);
+    }
+
+    public void addResultado(String fecha, int resultado) {
+        dataBase.execSQL("insert into RESULTADO (fecha, resultado) values(" + "'" + fecha + "'" + "," + resultado + ")");
     }
 }

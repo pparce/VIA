@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import cu.uno.via.adaptadores.ImagenesSenalesAdapter;
-import cu.uno.via.database.modelos.ModeloSenal;
+import cu.uno.via.database.modelos.SenalModelo;
 import cu.uno.via.R;
-import cu.uno.via.actividades.ActivityVisualizarSenales;
-import cu.uno.via.utiles.App;
+import cu.uno.via.actividades.VisualizarSenalesActivity;
+import cu.uno.via.App;
 import cu.uno.via.utiles.SpacesItemDecorationEventos;
 
 public class Fragmento extends Fragment {
@@ -67,14 +67,14 @@ public class Fragmento extends Fragment {
         adapter = new ImagenesSenalesAdapter(context, getArguments().getInt("posicion"));
         recyclerView.setAdapter(adapter);
 
-        SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(10, 7);
+        SpacesItemDecorationEventos spacesItemDecoration = new SpacesItemDecorationEventos(10, 45);
         recyclerView.addItemDecoration(spacesItemDecoration);
         adapter.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
 
-                List<ModeloSenal> list = App.LISTA_SENALES.get(ActivityVisualizarSenales.posicion).getListaTipoSenales().get(getArguments().getInt("posicion")).getListaSenal();
+                List<SenalModelo> list = App.LISTA_SENALES.get(VisualizarSenalesActivity.posicion).getListaTipoSenales().get(getArguments().getInt("posicion")).getListaSenal();
                 int posicion = recyclerView.getChildAdapterPosition((View) view.getParent());
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
@@ -102,7 +102,7 @@ public class Fragmento extends Fragment {
             }
         });
 
-        recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+        /*recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
                 if (recyclerView.canScrollVertically(-1)) {
@@ -111,7 +111,7 @@ public class Fragmento extends Fragment {
                     ActivityVisualizarSenales.onScrollCallback.onScroll(true);
                 }
             }
-        });
+        });*/
 
     }
 

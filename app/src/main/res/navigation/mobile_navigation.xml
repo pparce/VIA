@@ -7,51 +7,51 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="cu.uno.via.ui.home.HomeFragment"
+        android:name="cu.uno.via.fragmentos.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
     </fragment>
 
     <fragment
         android:id="@+id/nav_infraccion"
-        android:name="cu.uno.via.ui.infraccion.InfraccionFragment"
+        android:name="cu.uno.via.fragmentos.InfraccionFragment"
         android:label="@string/menu_infraccion"
         tools:layout="@layout/fragment_infraccion" >
     </fragment>
 
     <fragment
         android:id="@+id/nav_documentacion"
-        android:name="cu.uno.via.ui.documentos.DocumentosFragment"
+        android:name="cu.uno.via.fragmentos.DocumentosFragment"
         android:label="@string/menu_documentos"
         tools:layout="@layout/fragment_documentos" />
 
     <fragment
         android:id="@+id/nav_senales"
-        android:name="cu.uno.via.ui.senales.SenalesFragment"
+        android:name="cu.uno.via.fragmentos.SenalesFragment"
         android:label="@string/menu_senales"
         tools:layout="@layout/fragment_senales" />
 
     <fragment
         android:id="@+id/nav_evaluar"
-        android:name="cu.uno.via.ui.evaluar.EvaluarFragment"
+        android:name="cu.uno.via.fragmentos.EvaluarFragment"
         android:label="@string/menu_evaluar"
         tools:layout="@layout/fragment_evaluar" />
 
     <fragment
         android:id="@+id/nav_notas"
-        android:name="cu.uno.via.ui.notas.NotasFragment"
+        android:name="cu.uno.via.fragmentos.NotasFragment"
         android:label="@string/menu_notas"
         tools:layout="@layout/fragment_notas" />
 
     <activity
         android:id="@+id/nav_info"
-        android:name="cu.uno.via.actividades.ActivityInfo"
+        android:name="cu.uno.via.actividades.InfoActivity"
         android:label="@string/menu_info"
         tools:layout="@layout/activity_info" />
 
     <activity
         android:id="@+id/nav_setting"
-        android:name="cu.uno.via.actividades.ActivityInfo"
+        android:name="cu.uno.via.actividades.InfoActivity"
         android:label="@string/menu_info"
         tools:layout="@layout/activity_info" />
 </navigation>

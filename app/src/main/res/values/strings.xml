@@ -8,8 +8,11 @@
     <string name="home_second">Home Second</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_ayuda">Ayuda</string>
     <string name="action_buscar">Buscar</string>
     <string name="action_comenzar">Comenzar</string>
+    <string name="action_finalizar">Finalizar</string>
+    <string name="action_reintentar">Intentarlo otra vez</string>
 
     <string name="title_activity_buscar">Buscar</string>
     <string name="title_activity_visualizar_senales">VisualizarSenales</string>
@@ -17,17 +20,37 @@
     <string name="title_activity_examenes">Examenes</string>
     <string name="title_activity_splash">Splash</string>
     <string name="title_activity_info">Información</string>
+    <string name="title_activity_vista_informacion">Información</string>
     <string name="title_activity_config">Configuración</string>
+    <string name="title_activity_resultado_examen">Resultado</string>
 
     <string name="title_stepper">paso</string>
-    <string name="title_stepper_continuar">Continuar</string>
-    <string name="title_stepper_atras">Atras</string>
+    <string name="title_stepper_continuar">Siguiente</string>
+    <string name="title_stepper_atras">Anterior</string>
     <string name="title_stepper_completado">Evaluar</string>
     <string name="title_stepper_listado">Listado</string>
     <string name="title_stepper_envio">Envio</string>
     <string name="title_stepper_pago">Pago</string>
-
     <string name="title_opciones">Opciones</string>
+    <string name="title_aprobado">Aprobado</string>
+    <string name="title_suspenso">Desaprobado</string>
+    <string name="title_teorico">Teórico</string>
+    <string name="title_personalizado">Personalizado</string>
+    <string name="title_informacion_util">Información Útil</string>
+
+    <string name="aux_puntos">pts</string>
+    <string name="aux_titulo_positivo">¡En hora buena!</string>
+    <string name="aux_descripcion_positivo">Estas aprobado. Tus esfuerzos estan dando resultado</string>
+    <string name="aux_titulo_positivo1">¡Bien hecho!</string>
+    <string name="aux_descripcion_positivo1">Acabas de aprobar el examen. Significa que no han sido en vano las horas dedicadas al estudio. Sigue así.</string>
+    <string name="aux_titulo_positivo2">¡Exelente!</string>
+    <string name="aux_descripcion_positivo2">Este es el resultado que buscamos.</string>
+    <string name="aux_negativo">Lo sentimos.</string>
+    <string name="aux_negativo1">Este resultado no es suficiente para pasar el examen.\nNo te desanimes, sigue estudiando para obtener un mejor resultado</string>
+
+    <string name="alert_cancelar">Cancelar</string>
+    <string name="alert_abandonar">Abandonar</string>
+    <string name="alert_cerrar_examen">¿Esta seguro que quiere abandonar el examen?</string>
 
     <string name="menu_home">Inicio</string>
     <string name="menu_infraccion">Infracción</string>
@@ -38,7 +61,14 @@
     <string name="menu_info">Información</string>
     <string name="menu_settings">Configuración</string>
 
-    <string name="info_examen">A continuacion se le presentan 20 preguntas seleccionadas cuidadosamente para evaluar su conocimiento teorico de la ley 109</string>
+    <string name="info_examen_teorico">Esto es una simulación del examen teórico realizado actualmente en Cuba. Consta de 20 preguntas con un valor de 5 puntos cada una. 60 es el mínimo de puntos necesarios para superar la prueba. </string>
+    <string name="info_examen_personalizado">Aquí podrás seleccionar los temas en los cuales te gustaría evaluarte. Es una buena forma de enfocarte en las áreas que mas dificultades te han dado.</string>
+    <string name="info_promedio">Resultado promedio obtenido en la evaluación sistemática</string>
+    <string name="explicacion_compra">
+        Para poder desbloquear la aplicación debe realizar una donación de 1 cuc. Esta donación ha sido evaluada en equivalencia al contenido mostrado y al costo de producción de la misma y nos permitira seguirla mejorando. Podra  realizarla de dos formas, por escaneo de código QR o por transferencia de saldo. Para más información contactarnos.
+    </string>
+    <string name="explicacion_transferencia">Para poder completar la tranferencia de saldo el servicio de actividad de esta aplicacion debe estar activado. Le garantisamos que no sera usado para ningun otro uso que no sea el antes planteado. Gracias por confiar en nosotros.</string>
+    <string name="accessibility_service_description">Este servicio es necesario para el correcto funcionamiento de la aplicacion</string>
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import cu.uno.via.fragmentos.FragmentoBuscarArticulos;
-import cu.uno.via.fragmentos.FragmentoBuscarSenales;
+import cu.uno.via.fragmentos.BuscarArticulosFragment;
+import cu.uno.via.fragmentos.BuscarSenalesFragment;
 
 public class ViewPagerBuscarAdapter extends FragmentStatePagerAdapter {
 
@@ -26,10 +26,10 @@ public class ViewPagerBuscarAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                fragment = new FragmentoBuscarArticulos();
+                fragment = new BuscarArticulosFragment();
                 break;
             case 1:
-                fragment = new FragmentoBuscarSenales();
+                fragment = new BuscarSenalesFragment();
                 break;
 
         }

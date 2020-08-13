@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.database.modelos.ModeloSenal;
+import cu.uno.via.database.modelos.SenalModelo;
 import cu.uno.via.R;
 
 /**
@@ -23,25 +23,25 @@ import cu.uno.via.R;
 public class BuscarSenalesAdapter extends RecyclerView.Adapter<BuscarSenalesAdapter.MasonryView> implements View.OnClickListener {
 
     private Context context;
-    List<ModeloSenal> list;
+    List<SenalModelo> list;
     private View.OnClickListener listener;
     AssetManager assetManager;
     Bitmap bitmap;
     View layoutView;
 
-    public BuscarSenalesAdapter(Context context, List<ModeloSenal> lista) {
+    public BuscarSenalesAdapter(Context context, List<SenalModelo> lista) {
         this.context = context;
 
         this.list = lista;
     }
 
-    public void setFilter(List<ModeloSenal> list) {
+    public void setFilter(List<SenalModelo> list) {
         this.list = new ArrayList<>();
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
-    public List<ModeloSenal> getLista(){
+    public List<SenalModelo> getLista(){
         return this.list;
     }
 

@@ -145,6 +145,11 @@ public class Basedatos extends SQLiteOpenHelper {
         db.execSQL("update NOTAS set descripcion = '" + nota + "' where id= " + id);
     }
 
+    public void addResultado(String fecha, int resultado) {
+        db = getWritableDatabase();
+        db.execSQL("insert into RESULTADO (fecha, resultado) values(" + "'" + fecha + "'" + "," + resultado + ")");
+    }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("Select * from LIBROS", null);

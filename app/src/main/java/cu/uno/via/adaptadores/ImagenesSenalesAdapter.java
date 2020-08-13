@@ -14,10 +14,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-import cu.uno.via.database.modelos.ModeloSenal;
+import cu.uno.via.database.modelos.SenalModelo;
 import cu.uno.via.R;
-import cu.uno.via.actividades.ActivityVisualizarSenales;
-import cu.uno.via.utiles.App;
+import cu.uno.via.actividades.VisualizarSenalesActivity;
+import cu.uno.via.App;
 
 /**
  * Created by Suleiman on 26-07-2015.
@@ -25,7 +25,7 @@ import cu.uno.via.utiles.App;
 public class ImagenesSenalesAdapter extends RecyclerView.Adapter<ImagenesSenalesAdapter.MasonryView> implements View.OnClickListener, View.OnLongClickListener {
 
     private Context context;
-    List<ModeloSenal> list;
+    List<SenalModelo> list;
     List<Integer> imagenes;
     private View.OnClickListener onClickListener;
     private View.OnLongClickListener onLongClickListener;
@@ -37,7 +37,7 @@ public class ImagenesSenalesAdapter extends RecyclerView.Adapter<ImagenesSenales
 
     public ImagenesSenalesAdapter(Context context, int pos) {
         this.context = context;
-        this.list = App.LISTA_SENALES.get(ActivityVisualizarSenales.posicion).getListaTipoSenales().get(pos).getListaSenal();
+        this.list = App.LISTA_SENALES.get(VisualizarSenalesActivity.posicion).getListaTipoSenales().get(pos).getListaSenal();
         this.pos = pos;
         //this.imagenes = Imagenes();
     }

@@ -1,9 +1,13 @@
 package cu.uno.via.utiles;
 
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Copied from https://stackoverflow.com/a/30701422/7870874
@@ -27,7 +31,10 @@ public class GridItemSpacingDecoration extends RecyclerView.ItemDecoration {
         int position = parent.getChildAdapterPosition(view); // item position
         int column = position % spanCount; // item column
 
-        if (includeEdge) {
+        outRect.left = spacing;
+        outRect.top = spacing;
+
+        /*if (includeEdge) {
             outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
             outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
 
@@ -41,6 +48,6 @@ public class GridItemSpacingDecoration extends RecyclerView.ItemDecoration {
             if (position >= spanCount) {
                 outRect.top = spacing; // item top
             }
-        }
+        }*/
     }
 }

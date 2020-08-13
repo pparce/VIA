@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import cu.uno.via.fragmentos.FragmentoArticulosInfracciones;
+import cu.uno.via.fragmentos.ArticulosInfraccionesFragment;
 
 
 public class ViewPagerInfraccionesAdapter extends FragmentStatePagerAdapter {
@@ -24,7 +24,7 @@ public class ViewPagerInfraccionesAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        Fragment fragment = new FragmentoArticulosInfracciones();
+        Fragment fragment = new ArticulosInfraccionesFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("posicion", position);
         fragment.setArguments(bundle);

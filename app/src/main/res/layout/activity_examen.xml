@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.ActivityExamen">
+    tools:context=".actividades.ExamenActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -24,15 +24,5 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_examen" />
-
-    <!--<com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_gravity="bottom"
-        android:layout_margin="16dp"
-        android:text="@string/action_comenzar"
-        app:cornerRadius="50dp"/>-->
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

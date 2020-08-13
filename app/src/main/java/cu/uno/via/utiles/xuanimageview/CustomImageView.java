@@ -14,7 +14,7 @@ import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 
 import cu.uno.via.R;
-import cu.uno.via.utiles.App;
+import cu.uno.via.App;
 import cu.uno.via.utiles.CallBacks.CallbackLibro;
 import cu.uno.via.utiles.CallBacks.ClickImagenCallBack;
 import cu.uno.via.utiles.xuanimageview.GestureDetectors.RotationGestureDetector;

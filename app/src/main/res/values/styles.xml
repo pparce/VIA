@@ -9,6 +9,7 @@
         <item name="colorNavigationItem">@color/menu_item_color_state</item>
         <item name="colorNavigationItemSelected">@color/colorPrimary</item>
         <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -70,6 +71,5 @@
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
         <item name="android:windowExitAnimation">@anim/slide_bottom</item>
     </style>
-
 
 </resources>

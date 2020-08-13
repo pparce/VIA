@@ -2,9 +2,12 @@
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorSecondary">#141515</color>
-    <color name="colorAccent">#00060C</color>
+    <color name="colorSecondary">#232323</color>
+    <color name="colorAccent">#232323</color>
+    <color name="colorDisabled">#DFDFDF</color>
 
+    <color name="colorAprobado">#2E7D32</color>
+    <color name="colorSuspenso">#C62828</color>
     <color name="black_overlay">#66000000</color>
     <color name="color1_splash">#4CAF50</color>
     <color name="color2_splash">#DFB113</color>

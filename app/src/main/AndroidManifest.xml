@@ -3,8 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cu.uno.via">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
-        android:name=".utiles.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +20,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity">
         <activity
-            android:name=".actividades.ActivitySplash"
+            android:name=".actividades.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -25,61 +32,96 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".actividades.ActivityPrincipal"
+            android:name=".actividades.PrincipalActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBarStatus">
-
         </activity>
         <activity
-            android:name=".actividades.ActivityVisualizarSenales"
+            android:name=".actividades.VisualizarSenalesActivity"
             android:label="@string/title_activity_visualizar_senales"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".actividades.ActivityArbol"
+            android:name=".actividades.ArbolActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".actividades.ActivityNuevaNota"
+            android:name=".actividades.NuevaNotaActivity"
             android:label="@string/title_activity_nueva_nota"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".actividades.ActivityBuscar"
+            android:name=".actividades.BuscarActivity"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".actividades.ActivityPdfView"
+            android:name=".actividades.PdfViewActivity"
             android:label="pdf"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBarStatus" />
 
         <activity
-            android:name=".actividades.ActivityExamen"
+            android:name=".actividades.ExamenActivity"
             android:label="@string/title_activity_examenes"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".actividades.ActivityInfo"
+            android:name=".actividades.InfoActivity"
             android:label="@string/title_activity_info"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".actividades.ActivityConfig"
+            android:name=".actividades.VistaInformacionActivity"
+            android:label="@string/title_activity_vista_informacion"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".actividades.ConfigActivity"
             android:label="@string/title_activity_config"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".actividades.ResultadoExamenActivity"
+            android:label="@string/title_activity_resultado_examen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".actividades.DesbloqueoActivity"
+            android:label="@string/title_activity_resultado_examen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".actividades.TransferenciaActivity"
+            android:label="@string/title_activity_resultado_examen"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".utiles.USSDService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@layout/ussd_service" />
+        </service>
     </application>
 
 </manifest>

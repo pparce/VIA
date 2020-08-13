@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import cu.uno.via.database.modelos.ModeloNotas;
+import cu.uno.via.database.modelos.NotasModelo;
 import cu.uno.via.R;
 
 /**
@@ -22,13 +22,13 @@ public class NotasAdapter extends RecyclerView.Adapter<NotasAdapter.MasonryView>
 {
 
     private Context context;
-    List<ModeloNotas> list;
+    List<NotasModelo> list;
     private View.OnClickListener listener;
     private View.OnLongClickListener onLong;
 
     View layoutView;
 
-    public NotasAdapter(Context context, List<ModeloNotas> list) {
+    public NotasAdapter(Context context, List<NotasModelo> list) {
         this.context = context;
         this.list = list;
     }

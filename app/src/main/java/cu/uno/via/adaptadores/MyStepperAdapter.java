@@ -11,20 +11,25 @@ import com.stepstone.stepper.Step;
 import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 import com.stepstone.stepper.viewmodel.StepViewModel;
 
-import cu.uno.via.fragmentos.FragmentoStepper;
+import java.util.List;
+
+import cu.uno.via.database.modelos.PreguntaModelo;
+import cu.uno.via.fragmentos.StepperFragment;
 
 public class MyStepperAdapter extends AbstractFragmentStepAdapter {
+    List<PreguntaModelo> list;
 
-    public MyStepperAdapter(FragmentManager fm, Context context) {
+    public MyStepperAdapter(Context context, FragmentManager fm) {
         super(fm, context);
     }
 
     @Override
     public Step createStep(int position) {
-        Fragment fragment = new FragmentoStepper();
+        Fragment fragment = new StepperFragment();
 
         Bundle b = new Bundle();
-        b.putInt("CURRENT_STEP_POSITION_KEY", position);
+        b.putInt("POSICION", position);
+        b.putInt("EXAMEN", position);
         fragment.setArguments(b);
         return (Step) fragment;
     }

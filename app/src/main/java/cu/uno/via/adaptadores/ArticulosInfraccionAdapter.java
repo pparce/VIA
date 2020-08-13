@@ -23,7 +23,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.database.modelos.ModeloArticulo;
+import cu.uno.via.database.modelos.ArticuloModelo;
 import cu.uno.via.R;
 
 /**
@@ -32,13 +32,13 @@ import cu.uno.via.R;
 public class ArticulosInfraccionAdapter extends RecyclerView.Adapter<ArticulosInfraccionAdapter.MasonryView> implements View.OnClickListener {
 
     private Context context;
-    List<ModeloArticulo> list;
+    List<ArticuloModelo> list;
     private View.OnClickListener listener;
     AssetManager assetManager;
     Bitmap bitmap;
     View layoutView;
 
-    public ArticulosInfraccionAdapter(Context context, List<ModeloArticulo> list) {
+    public ArticulosInfraccionAdapter(Context context, List<ArticuloModelo> list) {
         this.context = context;
         this.list = list;
     }
@@ -79,13 +79,13 @@ public class ArticulosInfraccionAdapter extends RecyclerView.Adapter<ArticulosIn
             listener.onClick(view);
     }
 
-    public void setFilter(List<ModeloArticulo> list) {
+    public void setFilter(List<ArticuloModelo> list) {
         this.list = new ArrayList<>();
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
-    public List<ModeloArticulo> getLista(){
+    public List<ArticuloModelo> getLista(){
         return this.list;
     }
 

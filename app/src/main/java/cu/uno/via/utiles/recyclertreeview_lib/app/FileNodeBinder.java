@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import cu.uno.via.R;
-import cu.uno.via.utiles.App;
+import cu.uno.via.App;
 import cu.uno.via.utiles.recyclertreeview_lib.TreeNode;
 import cu.uno.via.utiles.recyclertreeview_lib.TreeViewBinder;
 

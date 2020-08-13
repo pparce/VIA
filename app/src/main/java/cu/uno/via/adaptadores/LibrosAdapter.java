@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import cu.uno.via.database.modelos.ModeloLibro;
+import cu.uno.via.database.modelos.LibroModelo;
 import cu.uno.via.R;
-import cu.uno.via.utiles.App;
+import cu.uno.via.App;
 
 /**
  * Created by Suleiman on 26-07-2015.
@@ -24,7 +24,7 @@ import cu.uno.via.utiles.App;
 public class LibrosAdapter extends RecyclerView.Adapter<LibrosAdapter.MasonryView> implements View.OnClickListener {
 
     private Context context;
-    List<ModeloLibro> list;
+    List<LibroModelo> list;
     private View.OnClickListener listener;
     AssetManager assetManager;
     Bitmap bitmap;

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".actividades.DesbloqueoActivity"
+    android:background="@color/colorBlanco"
+    tools:showIn="@layout/activity_desbloqueo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/explicacion_compra"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_qr"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttom_rounder"
+                    android:fontFamily="@font/roboto"
+                    android:text="Escannear codigo QR"
+                    app:cornerRadius="50dp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_transferencia"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttom_rounder"
+                    android:fontFamily="@font/roboto"
+                    android:text="Transferencia de saldo"
+                    app:cornerRadius="50dp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_libre"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttom_rounder"
+                    android:fontFamily="@font/roboto"
+                    android:text="Uso libre por 24 horas"
+                    app:backgroundTint="@color/colorAprobado"
+                    app:cornerRadius="50dp"
+                    android:layout_marginHorizontal="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

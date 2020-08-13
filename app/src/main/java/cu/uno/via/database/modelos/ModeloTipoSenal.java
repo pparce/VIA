@@ -9,7 +9,7 @@ public class ModeloTipoSenal {
     int id;
     String tipo = "";
     Bitmap caratula = null;
-    List<ModeloSenal> listaSenal;
+    List<SenalModelo> listaSenal;
 
 
     public ModeloTipoSenal() {
@@ -31,11 +31,11 @@ public class ModeloTipoSenal {
         this.tipo = tipo;
     }
 
-    public List<ModeloSenal> getListaSenal(){
+    public List<SenalModelo> getListaSenal(){
         return listaSenal;
     }
 
-    public void setListaSenal(List<ModeloSenal> listaSenal){
+    public void setListaSenal(List<SenalModelo> listaSenal){
         this.listaSenal = listaSenal;
     }
 
