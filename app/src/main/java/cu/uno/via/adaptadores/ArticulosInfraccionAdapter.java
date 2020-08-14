@@ -96,7 +96,7 @@ public class ArticulosInfraccionAdapter extends RecyclerView.Adapter<ArticulosIn
         public MasonryView(View itemView) {
             super(itemView);
 
-            descripcion = (TextView) itemView.findViewById(R.id.text1);
+            descripcion = (TextView) itemView.findViewById(R.id.descripcion);
             titulo = (TextView) itemView.findViewById(R.id.titulo);
             /*descripcion = (TextView) itemView.findViewById(R.id.descripcion);
             portada = (ImageView) itemView.findViewById(R.id.imageView);*/

@@ -90,7 +90,7 @@ public class BuscarArticulosAdapter extends RecyclerView.Adapter<BuscarArticulos
         public MasonryView(View itemView) {
             super(itemView);
 
-            descripcion = itemView.findViewById(R.id.text1);
+            descripcion = itemView.findViewById(R.id.descripcion);
             titulo = itemView.findViewById(R.id.titulo);
         }
     }

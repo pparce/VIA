@@ -4,6 +4,7 @@ public class InformacionModelo {
 
     String nombre ;
     String descripcion;
+    int fondo;
 
     public InformacionModelo() {
     }
@@ -24,5 +25,12 @@ public class InformacionModelo {
         this.descripcion = descripcion;
     }
 
+    public int getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(int fondo) {
+        this.fondo = fondo;
+    }
 }
 

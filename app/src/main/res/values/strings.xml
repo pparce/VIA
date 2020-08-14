@@ -38,6 +38,15 @@
     <string name="title_personalizado">Personalizado</string>
     <string name="title_informacion_util">Información Útil</string>
 
+    <string name="info_acerca_de">
+        Esta app tiene como objetivo la dibulgacion de toda la informacion teorica necesaria para la obtencio de la licencia
+        de conduccion en Cuba. Pretende ser una guia para los aspirantes y una herramienta para el conductor cubano.
+    </string>
+    <string name="info_donacion">
+        La App es completamente gratis y se mantiene con la ayuda de la comunidad.
+        Si crees que vale la pena y esta entre tus posibilidades nos vendria bien tu aporte. Saludos.
+    </string>
+
     <string name="aux_puntos">pts</string>
     <string name="aux_titulo_positivo">¡En hora buena!</string>
     <string name="aux_descripcion_positivo">Estas aprobado. Tus esfuerzos estan dando resultado</string>

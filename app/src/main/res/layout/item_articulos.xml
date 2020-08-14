@@ -24,7 +24,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"

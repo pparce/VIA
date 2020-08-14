@@ -24,7 +24,6 @@ import cu.uno.via.actividades.ExamenActivity;
 import cu.uno.via.App;
 import cu.uno.via.actividades.VistaInformacionActivity;
 import cu.uno.via.adaptadores.InformacionUtilAdapter;
-import cu.uno.via.database.modelos.ArticuloModelo;
 import cu.uno.via.database.modelos.InformacionModelo;
 import cu.uno.via.utiles.PrefManager;
 import cu.uno.via.utiles.SpacesItemDecorationEventos;
@@ -34,7 +33,7 @@ public class HomeFragment extends Fragment {
     View view;
     Context context;
     CardView primerExamen, estdisticasCard;
-    TextView promedioTextView;
+    TextView promedio;
     MaterialButton otraVez;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -52,9 +51,9 @@ public class HomeFragment extends Fragment {
         buildInformationList();
         primerExamen = view.findViewById(R.id.primerExamen);
         estdisticasCard = view.findViewById(R.id.estdisticasCard);
-        promedioTextView = view.findViewById(R.id.promedio);
+        promedio = view.findViewById(R.id.promedio);
         otraVez = view.findViewById(R.id.otravez);
-        recyclerView  = view.findViewById(R.id.recycler);
+        recyclerView = view.findViewById(R.id.recycler);
 
         if (App.LISTA_RESULTADOS.size() > 0) {
             validarPrimerExamen();
@@ -87,13 +86,22 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void buildInformationList(){
-        for (int i = 0; i < 5; i++) {
-            InformacionModelo modelo = new InformacionModelo();
-            modelo.setNombre("Escuelas");
-            modelo.setDescripcion("Esto es una descripcion que tengo que poner aqui para simular una descripcion");
-            informacion.add(modelo);
-        }
+    private void buildInformationList() {
+        InformacionModelo modelo = new InformacionModelo();
+        modelo.setNombre("Escuelas");
+        modelo.setDescripcion("Esto es una descripcion que tengo que poner aqui para simular una descripcion");
+        modelo.setFondo(R.drawable.fondo_escuela);
+        informacion.add(modelo);
+        modelo = new InformacionModelo();
+        modelo.setNombre("Lugares Destacados");
+        modelo.setDescripcion("Esto es una descripcion que tengo que poner aqui para simular una descripcion");
+        modelo.setFondo(R.drawable.fondo_lugares);
+        informacion.add(modelo);
+        modelo = new InformacionModelo();
+        modelo.setNombre("Datos Curiosos");
+        modelo.setDescripcion("Esto es una descripcion que tengo que poner aqui para simular una descripcion");
+        modelo.setFondo(R.drawable.fondo_datos_curiosos);
+        informacion.add(modelo);
     }
 
     private void validarPrimerExamen() {
@@ -101,7 +109,16 @@ public class HomeFragment extends Fragment {
         if (prefManager.getPrimerExamenCompletado()) {
             primerExamen.setVisibility(View.GONE);
             estdisticasCard.setVisibility(View.VISIBLE);
-            promedioTextView.setText(getPromedio() + " pts");
+            promedio.setText(getPromedio() + " pts");
+            validarResultadoExamen();
+        }
+    }
+
+    private void validarResultadoExamen() {
+        if (getPromedio() < 60) {
+            promedio.setTextColor(getResources().getColor(R.color.colorSuspenso));
+        } else if (getPromedio() >= 60) {
+            promedio.setTextColor(getResources().getColor(R.color.colorAprobado));
         }
     }
 

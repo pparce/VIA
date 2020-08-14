@@ -14,6 +14,7 @@ import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,9 +23,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import cu.uno.via.App;
 import cu.uno.via.R;
-import cu.uno.via.database.modelos.ArticuloModelo;
 import cu.uno.via.database.modelos.InformacionModelo;
 
 /**
@@ -57,6 +56,7 @@ public class InformacionUtilAdapter extends RecyclerView.Adapter<InformacionUtil
 
         holder.titulo.setText((list.get(position).getNombre()));
         holder.descripcion.setText(list.get(position).getDescripcion());
+        holder.fondo.setImageResource(list.get(position).getFondo());
         layoutView.setOnClickListener(this);
     }
 
@@ -87,12 +87,14 @@ public class InformacionUtilAdapter extends RecyclerView.Adapter<InformacionUtil
 
     class MasonryView extends RecyclerView.ViewHolder {
         TextView descripcion, titulo;
+        ImageView fondo;
 
         public MasonryView(View itemView) {
             super(itemView);
 
-            descripcion = itemView.findViewById(R.id.text1);
+            descripcion = itemView.findViewById(R.id.descripcion);
             titulo = itemView.findViewById(R.id.titulo);
+            fondo = itemView.findViewById(R.id.fondo);
         }
     }
 
